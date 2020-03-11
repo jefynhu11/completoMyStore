@@ -1,0 +1,20 @@
+Cenário de teste: Entra login e finalização da compra no site com sucesso
+
+DADO: o usuário acessa site http://automationpractice.com/index.php?controller=authentication&back=my-account
+
+E: Validação titulo no login
+E: Usado arquivo dado.csv para preencher email e senha, o usuario clica botão 'Sign in'
+E: Validação na tela titulo na navegador 'My account - My Store' que usuario entrou e preenche 'blouse' no campo (Search)
+E: Aparece na tela search na pagina e valida se confirmar 'Search - My Store', o usuario escolha um produto e clica
+E: O usuário entra a pagina de produto com toda informação, clica mais(+) numero dois no campo de quantidade, 'S' troca para 'M' no select Size, clica cor branco e clica botão 'Add to cart'
+E: Aparece modal, verifica validar 'Product successfully added to your shopping cart' e clica botão 'Proceed to checkout'
+E: Validação a pagina 'SHOPPING-CART SUMMARY', valida valor total e clica botão 'Proceed to checkout'
+E: Validação a pagina 'ADDRESSES', validação cada lista 'YOUR DELIVERY ADDRESS', preenche 'teste de mensagem' e clica botão 'Proceed to checkout'
+E: Validação a pagina 'SHIPPING', marca checkbox baixo 'Terms of service' e clica botão 'Proceed to checkout'
+E: Validação a pagina 'PLEASE CHOOSE YOUR PAYMENT METHOD', clica botão 'Pay by check'
+E: Validação a pagina 'ORDER SUMMARY', validação 'CHECK PAYMENT' e clica botão 'I confirm my order'
+E: Validação a pagina 'ORDER CONFIRMATION', validação 'Your order on My Store is complete.'
+
+QUANDO: O usuário faz comprar o produto finalizado de comprar quando aparece a mensagem 'Your order on My Store is complete.'
+
+ENTAO: A pagina 'ORDER CONFIRMATION', o usuário comprou o produto foi confirmado
