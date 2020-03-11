@@ -2,7 +2,8 @@ package testcases;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -23,9 +24,10 @@ public class PurchaseProduct {
 		this.authenticationTask = new AuthenticationTask(driver);
 	}
 
-	@Test
-	public void test() {
-		authenticationTask.account();
+	@ParameterizedTest
+	@CsvFileSource(resources = "/dados.csv")
+	public void test(String email, String password) {
+		authenticationTask.account(email, password);
 	}
 	
 	@AfterEach
