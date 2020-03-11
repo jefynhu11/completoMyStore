@@ -14,9 +14,9 @@ public class AuthenticationTask {
 		this.authenticationAppObject = new AuthenticationAppObject(driver);
 	}
 	
-	public void account() {
-		authenticationAppObject.getEmailTextFiled().sendKeys("testes@testes.com");
-		authenticationAppObject.getPasswordTextFiled().sendKeys("2020testes");
+	public void account(String email, String password) {
+		authenticationAppObject.getEmailTextFiled().sendKeys(email);
+		authenticationAppObject.getPasswordTextFiled().sendKeys(password);
 		authenticationAppObject.getSignInButton().click();
 	}
 	
