@@ -1,6 +1,11 @@
 package tasks;
 
+import static frameworks.ReportFw.log;
+import static frameworks.ScreenshotFw.screenshotCapture;
+
 import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
 
 import appobjects.AuthenticationAppObject;
 
@@ -18,7 +23,11 @@ public class AuthenticationTask {
 		authenticationAppObject.getEmailTextFiled().sendKeys(email);
 		authenticationAppObject.getPasswordTextFiled().sendKeys(password);
 		authenticationAppObject.getSignInButton().click();
+		if(driver.getTitle().equals("My account - My Store")) {
+			log(Status.PASS, "Validacao - O titulo My account correto.");
+		} else {
+			log(Status.FAIL, "Validacao - O titulo incorreto.", screenshotCapture(driver));
+		}
 	}
-	
 
 }
