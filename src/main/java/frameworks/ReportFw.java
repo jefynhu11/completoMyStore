@@ -37,8 +37,12 @@ public class ReportFw {
 		extentTest.log(status, mensagem);
 	}
 
-	public static void log(Status status, String mensagem, String imagemPath) throws IOException {
-		extentTest.log(status, mensagem, MediaEntityBuilder.createScreenCaptureFromPath(imagemPath).build());
+	public static void log(Status status, String mensagem, String imagemPath) {
+		try {			
+			extentTest.log(status, mensagem, MediaEntityBuilder.createScreenCaptureFromPath(imagemPath).build());
+		} catch (IOException e) {
+			log(status, mensagem + " e erro capturar");
+		}
 	}
 	
 	public static void tearDownFinish() {
