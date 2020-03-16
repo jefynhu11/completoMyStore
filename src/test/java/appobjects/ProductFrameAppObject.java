@@ -14,6 +14,12 @@ public class ProductFrameAppObject {
 		this.driver = driver;
 	}
 	
+	public WebElement getIfreme() {
+		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
+		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
+		return driver.switchTo().frame(iframe);
+	}
+	
 	public WebElement getMoreSymbolButtonFrame() {
 		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
 		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
@@ -23,28 +29,18 @@ public class ProductFrameAppObject {
 	}
 
 	public WebElement getMenuSelectFrame() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);                                
-		WebElement iframe1 = driver.findElement(By.cssSelector("#group_1 [title='M']"));
-		return iframe1;
+		return driver.findElement(By.cssSelector("#group_1 [title='M']")); 
 	}
 	
-	public WebElement getColorButtonFrame() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);                                
-		WebElement iframe1 = driver.findElement(By.id("color_8"));
-		return iframe1;
-	}
-
-	public WebElement getAddToCartButtonFrame() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);                                
-		WebElement iframe1 = driver.findElement(By.name("Submit"));
-		return iframe1;
-	}
+//	public WebElement getColorButtonFrame() {
+//		WebElement iframe1 = driver.findElement(By.id("color_8"));
+//		return iframe1;
+//	}
+//
+//	public WebElement getAddToCartButtonFrame() {
+//		WebElement iframe1 = driver.findElement(By.name("Submit"));
+//		return iframe1;
+//	}
 	
 	public WebElement getIframe() {
 		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
