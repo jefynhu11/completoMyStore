@@ -62,6 +62,7 @@ public class PurchaseProductTestCase {
 		chooseProductTask.chooseProduct();
 		productFrameTask.frames();
 		shoppingCartSummaryTask.shoppingSummary();
+		Thread.sleep(2000);
 		
 	}
 	
