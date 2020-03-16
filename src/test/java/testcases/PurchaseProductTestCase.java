@@ -22,6 +22,7 @@ import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
 import tasks.MyAccountTask;
 import tasks.ProductFrameTask;
+import tasks.ShoppingCartSummaryTask;
 
 public class PurchaseProductTestCase {
 	
@@ -30,6 +31,7 @@ public class PurchaseProductTestCase {
 	private MyAccountTask myAccountTask;
 	private ChooseProductTask chooseProductTask;
 	private ProductFrameTask productFrameTask;
+	private ShoppingCartSummaryTask shoppingCartSummaryTask;
 	
 	@BeforeEach
 	public void setUp() {
@@ -43,6 +45,7 @@ public class PurchaseProductTestCase {
 		this.myAccountTask = new MyAccountTask(driver);
 		this.chooseProductTask = new ChooseProductTask(driver);
 		this.productFrameTask = new ProductFrameTask(driver);
+		this.shoppingCartSummaryTask = new ShoppingCartSummaryTask(driver);
 	}
 
 	@ParameterizedTest
@@ -58,6 +61,7 @@ public class PurchaseProductTestCase {
 		myAccountTask.search("blouse");
 		chooseProductTask.chooseProduct();
 		productFrameTask.frames();
+		shoppingCartSummaryTask.shoppingSummary();
 		
 	}
 	
