@@ -46,4 +46,15 @@ public class ProductFrameAppObject {
 		return iframe1;
 	}
 	
+	public WebElement getIframe() {
+		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
+		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
+		driver.switchTo().frame(iframe);
+		driver.findElement(By.cssSelector("#quantity_wanted_p a.btn.btn-default.button-plus.product_quantity_up")).click();
+		driver.findElement(By.cssSelector("#group_1 [title='M']")).click();
+		driver.findElement(By.id("color_8")).click();
+		driver.findElement(By.name("Submit")).click();
+		return null;
+	}
+	
 }
