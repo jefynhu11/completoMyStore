@@ -1,6 +1,7 @@
 package tasks;
 
 import static frameworks.ScreenshotFw.screenshotCapture;
+import static frameworks.WaitElementFw.visibilityOf;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -25,6 +26,7 @@ public class ShoppingCartSummaryTask {
 	}
 	
 	public void shoppingSummary() {
+		visibilityOf(driver, shoppingCartSummaryAppObject.getNamePageLabel());
 		if(shoppingCartSummaryAppObject.getNamePageLabel().getText().equals("SHOPPING-CART SUMMARY"
 					+ "\nYour shopping cart contains: 2 Products")) {
 			ReportFw.log(Status.PASS, "Validacao - A pagina 'SHOPPING-CART SUMMARY' esta correto.");
