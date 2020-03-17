@@ -14,11 +14,12 @@ public class ProductFrameAppObject {
 		this.driver = driver;
 	}
 	
-	public WebElement getIfreme() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		return driver.switchTo().frame(iframe);
-	}
+//	public WebElement getIfreme() {
+//		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
+//		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
+//		driver.switchTo().frame(iframe);
+//		return driver.switchTo().frame(iframe);
+//	}
 	
 	public WebElement getMoreSymbolButtonFrame() {
 		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
@@ -32,15 +33,17 @@ public class ProductFrameAppObject {
 		return driver.findElement(By.cssSelector("#group_1 [title='M']")); 
 	}
 	
-//	public WebElement getColorButtonFrame() {
-//		WebElement iframe1 = driver.findElement(By.id("color_8"));
-//		return iframe1;
-//	}
-//
-//	public WebElement getAddToCartButtonFrame() {
-//		WebElement iframe1 = driver.findElement(By.name("Submit"));
-//		return iframe1;
-//	}
+	public WebElement getColorButtonFrame() {
+		return driver.findElement(By.id("color_8")); 
+	}
+
+	public WebElement getAddToCartButtonFrame() {
+		return driver.findElement(By.name("Submit")); 
+	}
+	
+	public WebElement getProceedToCheckoutButtonFrame() {
+		return driver.findElement(By.cssSelector("div.button-container a[title='Proceed to checkout']"));
+	}
 	
 	public WebElement getIframe() {
 		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
