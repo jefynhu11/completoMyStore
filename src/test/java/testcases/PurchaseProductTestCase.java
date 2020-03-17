@@ -23,6 +23,7 @@ import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
 import tasks.MyAccountTask;
 import tasks.ProductFrameTask;
+import tasks.ShippingTask;
 import tasks.ShoppingCartSummaryTask;
 
 public class PurchaseProductTestCase {
@@ -34,6 +35,7 @@ public class PurchaseProductTestCase {
 	private ProductFrameTask productFrameTask;
 	private ShoppingCartSummaryTask shoppingCartSummaryTask;
 	private AddressTask addressTask;
+	private ShippingTask shippingTask;
 	
 	@BeforeEach
 	public void setUp() {
@@ -49,6 +51,7 @@ public class PurchaseProductTestCase {
 		this.productFrameTask = new ProductFrameTask(driver);
 		this.shoppingCartSummaryTask = new ShoppingCartSummaryTask(driver);
 		this.addressTask = new AddressTask(driver);
+		this.shippingTask = new ShippingTask(driver);
 		
 	}
 
@@ -67,6 +70,7 @@ public class PurchaseProductTestCase {
 		productFrameTask.frames();
 		shoppingCartSummaryTask.shoppingSummary();
 		addressTask.address();
+		shippingTask.shipping();
 		Thread.sleep(2000);
 		
 	}
