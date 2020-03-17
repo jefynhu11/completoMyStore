@@ -22,8 +22,11 @@ public class ProductFrameTask {
 	public void frames() {
 		productFrameAppObject.getMoreSymbolButtonFrame().click();
 		productFrameAppObject.getMenuSelectFrame().click();
-//		productFrameAppObject.getColorButtonFrame().click();
-//		productFrameAppObject.getAddToCartButtonFrame().click();
+		productFrameAppObject.getColorButtonFrame().click();
+		productFrameAppObject.getAddToCartButtonFrame().click();
+		visibilityOfElementLocated(driver, By.cssSelector("div.button-container a[title='Proceed to checkout']"));
+		productFrameAppObject.getProceedToCheckoutButtonFrame().click();
+		
 //		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
 //		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
 //		driver.switchTo().frame(iframe);
