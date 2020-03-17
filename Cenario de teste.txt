@@ -13,7 +13,6 @@ E: Validação a pagina 'ADDRESSES', validação cada lista 'YOUR DELIVERY ADDRE
 E: Validação a pagina 'SHIPPING', marca checkbox baixo 'Terms of service' e clica botão 'Proceed to checkout'
 E: Validação a pagina 'PLEASE CHOOSE YOUR PAYMENT METHOD', clica botão 'Pay by check'
 E: Validação a pagina 'ORDER SUMMARY', validação 'CHECK PAYMENT' e clica botão 'I confirm my order'
-
 E: Validação a pagina 'ORDER CONFIRMATION', validação 'Your order on My Store is complete.'
 
 QUANDO: O usuário faz comprar o produto finalizado de comprar quando aparece a mensagem 'Your order on My Store is complete.'
