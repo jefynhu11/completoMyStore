@@ -22,6 +22,7 @@ import tasks.AddressTask;
 import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
 import tasks.MyAccountTask;
+import tasks.PaymentConfirmTask;
 import tasks.PaymentTask;
 import tasks.ProductFrameTask;
 import tasks.ShippingTask;
@@ -38,6 +39,7 @@ public class PurchaseProductTestCase {
 	private AddressTask addressTask;
 	private ShippingTask shippingTask;
 	private PaymentTask paymentTask;
+	private PaymentConfirmTask paymentConfirmTask;
 	
 	@BeforeEach
 	public void setUp() {
@@ -55,6 +57,7 @@ public class PurchaseProductTestCase {
 		this.addressTask = new AddressTask(driver);
 		this.shippingTask = new ShippingTask(driver);
 		this.paymentTask = new PaymentTask(driver);
+		this.paymentConfirmTask = new PaymentConfirmTask(driver);
 		
 	}
 
@@ -75,6 +78,7 @@ public class PurchaseProductTestCase {
 		addressTask.address();
 		shippingTask.shipping();
 		paymentTask.payment();
+		paymentConfirmTask.paymentConfirm();
 		Thread.sleep(2000);
 		
 	}
