@@ -61,8 +61,8 @@ public class PurchaseProductTestCase {
 		myAccountTask.search("blouse");
 		chooseProductTask.chooseProduct();
 		productFrameTask.frames();
+		shoppingCartSummaryTask.shoppingSummary();
 		Thread.sleep(2000);
-//		shoppingCartSummaryTask.shoppingSummary();
 		
 	}
 	
