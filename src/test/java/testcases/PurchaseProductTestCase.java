@@ -22,6 +22,7 @@ import tasks.AddressTask;
 import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
 import tasks.MyAccountTask;
+import tasks.PaymentCompleteTask;
 import tasks.PaymentConfirmTask;
 import tasks.PaymentTask;
 import tasks.ProductFrameTask;
@@ -40,6 +41,7 @@ public class PurchaseProductTestCase {
 	private ShippingTask shippingTask;
 	private PaymentTask paymentTask;
 	private PaymentConfirmTask paymentConfirmTask;
+	private PaymentCompleteTask paymentCompleteTask;
 	
 	@BeforeEach
 	public void setUp() {
@@ -58,12 +60,12 @@ public class PurchaseProductTestCase {
 		this.shippingTask = new ShippingTask(driver);
 		this.paymentTask = new PaymentTask(driver);
 		this.paymentConfirmTask = new PaymentConfirmTask(driver);
-		
+		this.paymentCompleteTask = new PaymentCompleteTask(driver);
 	}
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/dados.csv")
-	public void test(String email, String password) throws InterruptedException {
+	public void test(String email, String password){
 		log(Status.INFO, "Validacao titulo");
 		if(driver.getTitle().equals("Login - My Store")) {
 			log(Status.PASS, "Validacao - O titulo Login correto.");
@@ -79,8 +81,7 @@ public class PurchaseProductTestCase {
 		shippingTask.shipping();
 		paymentTask.payment();
 		paymentConfirmTask.paymentConfirm();
-		Thread.sleep(2000);
-		
+		paymentCompleteTask.paymentComplete();
 	}
 	
 	@AfterEach
