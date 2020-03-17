@@ -18,6 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.aventstack.extentreports.Status;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import tasks.AddressTask;
 import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
 import tasks.MyAccountTask;
@@ -32,6 +33,7 @@ public class PurchaseProductTestCase {
 	private ChooseProductTask chooseProductTask;
 	private ProductFrameTask productFrameTask;
 	private ShoppingCartSummaryTask shoppingCartSummaryTask;
+	private AddressTask addressTask;
 	
 	@BeforeEach
 	public void setUp() {
@@ -46,6 +48,8 @@ public class PurchaseProductTestCase {
 		this.chooseProductTask = new ChooseProductTask(driver);
 		this.productFrameTask = new ProductFrameTask(driver);
 		this.shoppingCartSummaryTask = new ShoppingCartSummaryTask(driver);
+		this.addressTask = new AddressTask(driver);
+		
 	}
 
 	@ParameterizedTest
@@ -62,6 +66,7 @@ public class PurchaseProductTestCase {
 		chooseProductTask.chooseProduct();
 		productFrameTask.frames();
 		shoppingCartSummaryTask.shoppingSummary();
+		addressTask.address();
 		Thread.sleep(2000);
 		
 	}
