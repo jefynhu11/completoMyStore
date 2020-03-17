@@ -1,6 +1,5 @@
 package tasks;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import appobjects.ChooseProductAppObject;
@@ -15,12 +14,7 @@ public class ChooseProductTask {
 		this.chooseProductAppObject = new ChooseProductAppObject(driver);
 	}
 	
-	public void chooseProduct() throws InterruptedException {
+	public void chooseProduct() {
 		chooseProductAppObject.getImageButton().click();
-//		chooseProductAppObject.getMoreSymbolButtonFrame().click();
-//		Thread.sleep(2000);
-//		chooseProductAppObject.getMenuSelectFrame().click();
-//		chooseProductAppObject.getColorButtonFrame().click();
-//		Thread.sleep(2000);
 	}
 }
