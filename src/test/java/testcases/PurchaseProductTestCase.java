@@ -6,8 +6,6 @@ import static frameworks.ReportFw.setUpStart;
 import static frameworks.ReportFw.tearDownFinish;
 import static frameworks.ScreenshotFw.screenshotCapture;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -66,12 +64,6 @@ public class PurchaseProductTestCase {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/dados.csv")
 	public void test(String email, String password){
-		log(Status.INFO, "Validacao titulo");
-		if(driver.getTitle().equals("Login - My Store")) {
-			log(Status.PASS, "Validacao - O titulo Login correto.");
-		} else {
-			log(Status.FAIL, "Validacao - O titulo incorreto.", screenshotCapture(driver));
-		}
 		authenticationTask.account(email, password);
 		myAccountTask.search("blouse");
 		chooseProductTask.chooseProduct();
