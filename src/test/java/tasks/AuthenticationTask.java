@@ -20,6 +20,12 @@ public class AuthenticationTask {
 	}
 	
 	public void account(String email, String password) {
+		log(Status.INFO, "Validacao titulo");
+		if(driver.getTitle().equals("Login - My Store")) {
+			log(Status.PASS, "Validacao - O titulo Login correto.");
+		} else {
+			log(Status.FAIL, "Validacao - O titulo incorreto.", screenshotCapture(driver));
+		}
 		authenticationAppObject.getEmailTextFiled().sendKeys(email);
 		authenticationAppObject.getPasswordTextFiled().sendKeys(password);
 		authenticationAppObject.getSignInButton().click();
