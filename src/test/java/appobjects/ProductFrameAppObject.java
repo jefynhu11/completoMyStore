@@ -14,19 +14,15 @@ public class ProductFrameAppObject {
 		this.driver = driver;
 	}
 	
-//	public WebElement getIfreme() {
-//		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-//		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-//		driver.switchTo().frame(iframe);
-//		return driver.switchTo().frame(iframe);
-//	}
-	
-	public WebElement getMoreSymbolButtonFrame() {
+	public WebDriver getIframes() {
 		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
 		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);                                
-		WebElement iframe1 = driver.findElement(By.cssSelector("#quantity_wanted_p a.btn.btn-default.button-plus.product_quantity_up"));
-		return iframe1;
+		driver.switchTo().frame(iframe);
+		return driver;
+	}
+	
+	public WebElement getMoreSymbolButtonFrame() {
+		return driver.findElement(By.cssSelector("#quantity_wanted_p a.btn.btn-default.button-plus.product_quantity_up"));
 	}
 
 	public WebElement getMenuSelectFrame() {
@@ -43,17 +39,6 @@ public class ProductFrameAppObject {
 	
 	public WebElement getProceedToCheckoutButtonFrame() {
 		return driver.findElement(By.cssSelector("div.button-container a[title='Proceed to checkout']"));
-	}
-	
-	public WebElement getIframe() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);
-		driver.findElement(By.cssSelector("#quantity_wanted_p a.btn.btn-default.button-plus.product_quantity_up")).click();
-		driver.findElement(By.cssSelector("#group_1 [title='M']")).click();
-		driver.findElement(By.id("color_8")).click();
-		driver.findElement(By.name("Submit")).click();
-		return null;
 	}
 	
 }
