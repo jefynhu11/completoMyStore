@@ -1,21 +1,16 @@
 package testcases;
 
-import static frameworks.ReportFw.log;
 import static frameworks.ReportFw.setUpConfigure;
 import static frameworks.ReportFw.setUpStart;
 import static frameworks.ReportFw.tearDownFinish;
-import static frameworks.ScreenshotFw.screenshotCapture;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.aventstack.extentreports.Status;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import frameworks.BaseTestFw;
 import tasks.AddressTask;
 import tasks.AuthenticationTask;
 import tasks.ChooseProductTask;
@@ -27,9 +22,9 @@ import tasks.ProductFrameTask;
 import tasks.ShippingTask;
 import tasks.ShoppingCartSummaryTask;
 
-public class PurchaseProductTestCase {
+public class PurchaseProductTestCase extends BaseTestFw{
 	
-	private WebDriver driver;
+	private WebDriver driver = getDriver();
 	private AuthenticationTask authenticationTask;
 	private MyAccountTask myAccountTask;
 	private ChooseProductTask chooseProductTask;
@@ -45,9 +40,6 @@ public class PurchaseProductTestCase {
 	public void setUp() {
 		setUpConfigure("Automaticon Report", "Execution Report");
 		setUpStart("Compra com sucesso");
-		WebDriverManager.chromedriver().setup();
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
 		this.driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
 		this.authenticationTask = new AuthenticationTask(driver);
 		this.myAccountTask = new MyAccountTask(driver);
@@ -76,12 +68,4 @@ public class PurchaseProductTestCase {
 		paymentCompleteTask.paymentComplete();
 	}
 	
-	@AfterEach
-	public void tearDown() {
-		tearDownFinish();
-		if(driver!=null) {
-			driver.quit();
-			driver = null;
-		}
-	}
 }
