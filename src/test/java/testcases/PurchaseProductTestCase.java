@@ -59,7 +59,7 @@ public class PurchaseProductTestCase extends BaseTestFw{
 		authenticationTask.account(email, password);
 		myAccountTask.search("blouse");
 		chooseProductTask.chooseProduct();
-		productFrameTask.frames();
+		productFrameTask.informationProduct();
 		shoppingCartSummaryTask.shoppingSummary();
 		addressTask.address();
 		shippingTask.shipping();
