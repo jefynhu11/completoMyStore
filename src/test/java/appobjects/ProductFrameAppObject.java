@@ -15,10 +15,16 @@ public class ProductFrameAppObject {
 	}
 	
 	public WebDriver getIframes() {
-		visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
-		WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
-		driver.switchTo().frame(iframe);
-		return driver;
+		boolean existe = false; 
+		existe = driver.findElements(By.className("fancybox-iframe")).size() != 0;
+		if(existe) {
+			visibilityOfElementLocated(driver, By.className("fancybox-iframe"));
+			WebElement iframe = driver.findElement(By.className("fancybox-iframe"));
+			driver.switchTo().frame(iframe);
+			return driver;			
+		} else {
+			return null;
+		}
 	}
 	
 	public WebElement getMoreSymbolButtonFrame() {
