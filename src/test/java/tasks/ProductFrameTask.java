@@ -19,7 +19,7 @@ public class ProductFrameTask {
 		this.productFrameAppObject = new ProductFrameAppObject(driver);
 	}
 	
-	public void frames() {
+	public void informationProduct() {
 		productFrameAppObject.getIframes();
 		productFrameAppObject.getMoreSymbolButtonFrame().click();
 		productFrameAppObject.getMenuSelectFrame().click();
