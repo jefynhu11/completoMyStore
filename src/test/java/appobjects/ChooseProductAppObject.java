@@ -13,7 +13,12 @@ public class ChooseProductAppObject {
 	}
 	
 	public WebElement getImageButton() {
-		return driver.findElement(By.cssSelector("img[title='Blouse']"));
+		boolean existe = false; 
+		existe = driver.findElements(By.cssSelector("img[title='Blouse']")).size() != 0;
+		if(existe) {
+			return driver.findElement(By.cssSelector("img[title='Blouse']"));
+		} else {
+			return driver.findElement(By.cssSelector("a.product_img_link"));
+		}
 	}
-	
 }
