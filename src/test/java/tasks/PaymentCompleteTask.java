@@ -26,7 +26,7 @@ public class PaymentCompleteTask {
 		}
 		
 		if(paymentCompleteAppObject.getMessageSuccessLabel().getText().equals("Your order on My Store is complete.")) {
-			log(Status.PASS, "Validacao - A pagina 'Your order on My Store is complete.' esta correto");
+			log(Status.PASS, "Validacao - A pagina 'Your order on My Store is complete.' esta correto", screenshotCapture(driver));
 		} else {
 			log(Status.FAIL, "Validacao - A pagina 'Your order on My Store is complete.' nao esta correto", screenshotCapture(driver));
 		}
